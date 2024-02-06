@@ -3,9 +3,35 @@ body {
         rgb(59, 88, 53),
         rgb(29, 40, 42)
     );
-    height: 100vh;
+    height: 100;
     color: white;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column; 
 }
 
+#below-cover{ /* Acessando um elmento pelo Id*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#button-containers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button{ /* Acessando um grupo de elementos pela Classe*/
+    font-size: 1.5em;
+}
+
+.button-navigate{
+    font-size: 2.5em;
+}
+
+.button-biggest{
+    font-size: 3em;
+}
 
