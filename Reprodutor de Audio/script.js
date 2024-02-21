@@ -4,7 +4,10 @@ const cover = document.getElementById("cover");
 const play = document.getElementById("Play");
 const avancar = document.getElementById("Skip");
 const voltar = document.getElementById("Return");
+const barraprogesso = document.getElementById("current-progress");
 const song = document.getElementById('audio');
+const progressContainer = document.getElementById("progress-container");
+const btShuffle = document.getElementById("shuffle");
 
 const Clandestina = { //criando um objeto
     songName : 'Clandestina',
@@ -19,7 +22,7 @@ const COWBELL_WARRIOR = { //criando um objeto
 };
 const DoIWannaKnow = { //criando um objeto
     songName : 'Do I Wanna Know',
-    artist : 'arctic monkeys',
+    artist : 'Arctic Monkeys',
     file : 'Do I Wanna Know'
 };
 const MISIRLOU = { //criando um objeto
@@ -31,7 +34,9 @@ const MISIRLOU = { //criando um objeto
 const Playlist = [Clandestina, COWBELL_WARRIOR, DoIWannaKnow, MISIRLOU]; //Criando uma ARRAY
 let index = 0;
 
-let tatocando = false; // variável de controle
+let tatocando = false; // variável de controle para ver se esta tocando
+let taembaralhado = false; // variável de controle para ver se esta embaralhado
+let SortearPlayslist = [...Playlist];
 
 function TocarMusica(){
     play.querySelector('.bi').classList.remove('bi-play-circle-fill'); //remove o botão play
@@ -85,8 +90,32 @@ function avancarmusica(){
     TocarMusica();
 }
 
+function updateprogressbar(){
+    const largurabarra = (song.durantion/song.currentTime)*100; //calculo que determina a % escutado da musica
+    barraprogesso.style.setProperty('--progress', `${largurabarra}%`); //acessando o Css
+}                                                    //mascara no JS
+
 initializeSong();
+
+function jumpTo(event){ //avançar musica pela barar de progresso 
+    const width = progressContainer.clientWidth; //largura da bara de progresso
+    const ClickPosition = event.offsetX;
+    const jumpToTime = (ClickPosition/width)*song.durantion;
+    song.currentTime = jumpToTime;
+}
+
+function shuffleButtonClicked(){
+    if (taembaralhado === false){
+        taembaralhado = true;
+        shuffleArray();
+    }
+    
+}
+    initializeSong();
 
 play.addEventListener('click', PlayPauseDecidir); //Atribui ao botão a capacidade de ouvir o evento click
 voltar.addEventListener('click', voltarmusica); //Atribui ao botão a capacidade de ouvir o evento click de voltar
 avancar.addEventListener('click', avancarmusica);
+progressContainer.addEventListener('click', jumpTo);
+song.addEventListener('timeupdate', updateprogressbar);
+shuffleButton.addEventListener('click', shuffleButtonClicked);
