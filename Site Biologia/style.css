@@ -1,0 +1,13 @@
+#banner-principal{
+    width: 900px;
+    height: 400px;
+}
+
+#elementos-capa{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
