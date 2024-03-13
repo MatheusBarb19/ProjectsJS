@@ -1,6 +1,8 @@
 #banner-principal{
-    width: 900px;
-    height: 400px;
+    width: auto; 
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 #elementos-capa{
@@ -9,5 +11,21 @@
     justify-content: space-between;
     align-items: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+p{
+    font-size: 12px;
+    justify-content: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;               
+}
+
+#containers-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: rgba(255, 228, 196, 0.685);
 
 }

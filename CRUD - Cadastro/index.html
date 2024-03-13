@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'> <!-- importando os icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>CRUD</title>
+</head>
+<body>
+    <div class="container">
+        <div class= "header">
+            <span>Cadastro de Funcionários</span>
+            <button onclick="openModal()" id="new">Incluir</i></button>
+        </div>
+
+        <div class="divTable">
+            <table> <!--tabela-->
+                <thead> <!--cabeçalho em uima tabela-->
+                    <tr> <!--linha em uma tabela-->
+                        <th>Nome</th> <!--Cabeçalhos da tabela-->
+                        <th>Função</th> <!--Cabeçalhos da tabela-->
+                        <th>Salário</th> <!--Cabeçalhos da tabela-->
+                        <th class="acao">Editar</th> <!--Cabeçalhos da tabela-->
+                        <th class="acao">Excluir</th> <!--Cabeçalhos da tabela-->
+                    </tr>
+                </thead>
+                <tbody> <!--corpo em uma tabela-->
+
+                </tbody>
+            </table>
+        </div>
+
+        <!--Modal-->
+        <div class="modal-container">
+            <div class="modal">
+                <form> <!--formulario-->
+                    <label for="m-nome">Nome</label> <!--Texto-->
+                    <input id="m-nome" type="text" required > <!--Inserir dados-->
+
+                    <label for="m-funcao">Funcão</label>
+                    <input id="m-funcao" type="text" required >
+
+                    <label for="m-salario">Salário</label>
+                    <input id="m-salario" type="text" required >
+
+                    <button id="btnSalvar">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+    <script src="./script.js"></script>
+
+<footer>
+    <a href="https://www.linkedin.com/in/matheus-felix-barbosa-658422227" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/MatheusBarb19" target="_blank"><i class="fab fa-github"></i></a>
+</footer>   
+</html>

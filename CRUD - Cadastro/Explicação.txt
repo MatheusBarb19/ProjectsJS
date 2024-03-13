@@ -1,0 +1,2 @@
+O projeto foi desenvolvimento primariamente em JavaScript, HTML e CSS.Sendo um protótipo de aprendizagem.
+O código visa construir um sistema de cadatro de funcionários.
